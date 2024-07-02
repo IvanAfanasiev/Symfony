@@ -1,0 +1,30 @@
+{% extends 'header.html.twig' %}
+{% block title %}Main page{% endblock %}
+{% block body %}
+
+<form action="/search">
+<input id="search-query" name="search-query" placeholde="search"></input>
+<input type="submit" value="Search article"></input>
+</from>
+
+
+<h1>Articles</h1>
+<table>
+
+
+{% if(articles) %}
+    {% for article in articles['articles'] %}
+    <tr>
+            <td>
+             <img src="{{ article.imagePath }}" width="100">
+                <a href="article/{{article.id}}">{{article.title}}</a>  
+                <a href="article/{{article.id}}/delete">delete</a>
+            </td>
+    </tr>
+        {% endfor %}
+
+        
+{%endif%}
+
+</table>
+{% endblock %}

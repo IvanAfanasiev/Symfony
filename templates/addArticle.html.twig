@@ -1,0 +1,14 @@
+{% extends 'header.html.twig' %}
+{% block title %}Articel creator{% endblock %}
+
+{% block body %}
+
+    <div>
+        <div>
+            {{ form_start(form, {'attr': {'enctype': 'multipart/form-data'}}) }}
+                {{ form_widget(form) }}
+            {{ form_end(form) }}
+        </div>
+    </div>
+    
+{% endblock %}

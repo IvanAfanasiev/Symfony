@@ -1,0 +1,15 @@
+{% extends "header.html.twig" %}
+
+{% block title %}Edit article{% endblock %}
+{% block body %}
+    <h1 class="text-center">Edit article with id: {{ article.id }}</h1>
+    <div class="row">
+        <div class="col-12">
+            {{ form_start(form, {'attr': {'enctype': 'multipart/form-data'}}) }}
+            {{ form_widget(form) }}
+            <div class="form-widget"></div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+
+{% endblock %}

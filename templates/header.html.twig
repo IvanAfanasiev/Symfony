@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        {% block stylesheets %}
+        {% endblock %}
+
+        {% block javascripts %}
+        {% endblock %}
+    </head>
+    <body>
+    <header>
+        <style>
+            header{
+                display:block;
+                height:35px;
+                display: flex;
+                margin-bottom: 15px;
+                gap: 15px;
+            }
+            header a{
+                color: black;
+                text-decoration: none;
+            }
+            
+        </style>
+
+        <button><a  href="/main">Show all articles</a></button>
+        <button><a href="/last">Last article</a></button>
+        <button><a href="/add">Create new article</a></button>
+        {% block header %}{% endblock %}
+        </header>
+
+        
+        {% block body %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,17 @@
+{% extends 'header.html.twig' %}
+{% block title %}Article page{% endblock %}
+{% block header %}
+    <button><a href="/article/{{article.id}}/edit">Edit article</a></button>
+{% endblock %}
+
+{% block body %}
+{% for image in images %}
+    <img width="150" src="{{ image.path }}" alt="{{ image.alt | default('image') }}" title="{{ image.title | default('') }}">
+{% endfor %}
+<h1>{{article.title}}</h1>
+<h2>id: {{article.id}}</h2>
+<h2>date: {{article.dateAdded|date('d.m.Y')}}</h2>
+<h3>content:</h3>
+<p>{{article.content}}</p>
+
+{% endblock %}
