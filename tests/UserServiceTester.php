@@ -11,7 +11,7 @@ use App\Entity\User;
 
 class UserServiceTester extends TestCase{
 
-//Test Controller
+//Test Find by id
     public function testGetById(){
         $result = $userService->getById(0);
         $expectedResult = $this->apiResponseFormatter->error("User not found");
@@ -19,7 +19,7 @@ class UserServiceTester extends TestCase{
         $this->assertEquals($expectedResult, $result);
     }
 
-//Test Service
+//Test Create
     public function testServiceCreate(){
         $userRepository = $this->createMock(UserRepository::class);
         $userRepository->method('findOneBy')->willReturn(null);
@@ -37,7 +37,7 @@ class UserServiceTester extends TestCase{
 
         $result = $userService->createUser($data);
         $expectedResult = [
-            'createdUserEmail' => null,
+            'createdUserEmail' => 'testEmail',
         ];
 
         $this->assertEquals($expectedResult, $result);
