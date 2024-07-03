@@ -46,7 +46,7 @@ class BlogController extends AbstractController
     #[Route('/last', name:'LastArticle')]   
     public function getLastArtcile() : Response{
         $newArt = $this->articleRepository->getLast();
-        return $this->render('article.html.twig', ['article'=>$newArt]);
+        return $this->render('article.html.twig', ['article'=>$newArt, 'images' => $newArt->getImages()->getValues()]);
     }
     #[Route('/search', name:'FindArticle', methods: ['GET'])]   
     public function findArtcile(Request $request) : Response{
